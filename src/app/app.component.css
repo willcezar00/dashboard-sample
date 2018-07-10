@@ -1,0 +1,25 @@
+body {
+    padding-top: 50px;
+  }
+  footer {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  /*
+   * Off Canvas
+   * --------------------------------------------------
+   */
+  
+  #sidebar {
+      padding:15px;
+      margin-top:10px;
+  }
+  
+  .ui-table .ui-table-tbody > tr > td,
+  .ui-table .ui-table-tfoot > tr > td {
+      padding: .25em .5em;
+     border-width: 1px;
+     border: 1px solid #ccc;
+
+  }

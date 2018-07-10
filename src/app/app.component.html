@@ -1,0 +1,43 @@
+<app-dashboard [dashboardMenu]="dashboardMenu">
+    <div class="jumbotron">
+        <a href="#" class="visible-xs" data-toggle="offcanvas">
+            <i class="fa fa-lg fa-reorder"></i>
+        </a>
+        <h1>Dashboard
+            <i class="fa fa-bar-chart"></i>
+        </h1>
+        <p>This is an example of an dashboard in administrator application</p>
+    </div>
+    <div class="row" id="chart">
+        <div class="col-lg-12">
+            <app-charts [atendimentos]="atendimentos"></app-charts>
+        </div>
+    </div>
+    <div class="row" id="table" style="margin-top:30px"> 
+        <div class="col-lg-12">
+            <p-table [value]="atendimentos" [paginator]="true" [rows]="10">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Data</th>
+                        <th>Demanda</th>
+                        <th>Capacidade</th>
+                        <th>Atendimento Planejado</th>
+                        <th>Atendimento Realizado</th>
+                        <th>Desvio</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-atendimento>
+                    <tr>
+                        <td>{{atendimento.dataView}}</td>
+                        <td>{{atendimento.demanda}}</td>
+                        <td>{{atendimento.capacidade}}</td>
+                        <td>{{atendimento.atendimentoPlanejado}}</td>
+                        <td>{{atendimento.atendimentoRealizado}}</td>
+                        <td>{{atendimento.desvio}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+
+</app-dashboard>

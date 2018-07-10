@@ -1,0 +1,68 @@
+<div id="wrapper" ngClass="{'active': '!toggleSidebar'}">
+  <div class="navbar-blue navbar navbar-fixed-top navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="#" class="navbar-left">
+          <img class="navbar-icon" src="assets/images/dashboar-icon.png" />
+        </a>
+        <a class="navbar-brand" href="#"> Dashboard</a>
+      </div>
+
+      <!--left menu navbar-->
+      <div class="navbar-brand navbar-toggle-button">
+        <div id="menu-toggle" (click)="toggleSideBar()" href="#">
+          <i class="fa fa-bars "></i>
+        </div>
+      </div>
+      <!-- ./left menu navbar-->
+
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#contato">Contato</a>
+          </li>
+          <li>
+            <a href="#logout">Sair</a>
+
+          </li>
+        </ul>
+      </div>
+      <!-- /.nav-collapse -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.navbar -->
+
+  <div class="container-fluid">
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+        <div class="sidebar-blue sidebar-nav sidebar-shadow" [ngClass]="{'sidebar-toggled': toggleSidebar}">
+          <ul class=" nav ">
+            <li class="active ">
+              <a *ngFor="let menu of dashboardMenu " href="{{menu.url}} ">{{menu.name}}</a>
+            </li>
+          </ul>
+        </div>
+        <!--/.well -->
+      </div>
+      <!--/span-->
+
+      <div class="col-xs-12 col-sm-8 ">
+
+        <ng-content></ng-content>
+
+      </div>
+      <!--/span-->
+
+
+    </div>
+    <!--/row-->
+
+    <hr>
+
+    <footer>
+      <p>william_cezar00@yahoo.com.br - 2018</p>
+    </footer>
+  </div>
+</div>
+<!--/.container-->
